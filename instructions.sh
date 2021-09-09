@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export GOOGLE_APPLICATION_CREDENTIALS=/home/user/ws/src/dialogflow_ros/json_folder/gentle-proton-252714-066b7ef02309.json
-apt-get install python-pip python3-pip
+apt-get install python-pip python3-pip -y
 pip3 install -r requirements.txt
 
 #sudo curl https://sdk.cloud.google.com | sudo bash https://sdk.cloud.google.com
