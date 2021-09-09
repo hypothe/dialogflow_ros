@@ -8,6 +8,8 @@ pip install --upgrade setuptools
 apt install portaudio19-dev python3-pyaudio -y
 
 pip install --upgrade google-cloud-speech
+pip install SpeechRecognition
+pip3 install SpeechRecognition
 pip install -r requirements.txt 
 
 pip install dialogflow
