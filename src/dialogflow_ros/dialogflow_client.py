@@ -35,7 +35,7 @@ class DialogflowClient(object):
         self.CHUNK = 4096
         self.FORMAT = pyaudio.paInt16
         self.CHANNELS = 1
-        self.RATE = 16000
+        self.RATE = 44100
         self.USE_AUDIO_SERVER = rospy.get_param('/dialogflow_client/use_audio_server', False)
         self.PLAY_AUDIO = rospy.get_param('/dialogflow_client/play_audio', True)
         self.DEBUG = rospy.get_param('/dialogflow_client/debug', False)
@@ -164,7 +164,7 @@ class DialogflowClient(object):
         rospy.logdebug("DF_CLIENT: Creating audio output...")
         self.stream_out = self.audio.open(format=pyaudio.paInt16,
                                           channels=1,
-                                          rate=24000,
+                                          rate=44100,
                                           output=True)
 
     def _play_stream(self, data):
