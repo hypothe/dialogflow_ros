@@ -1,8 +1,4 @@
 #!/bin/bash
-xhost local:root
-
-Desktop/pal_docker_utils-master/scripts : sudo docker container ls
-sudo docker exec -it silly_wilson /bin/bash
 
 export GOOGLE_APPLICATION_CREDENTIALS=/home/user/ws/src/dialogflow_ros/json_folder/gentle-proton-252714-066b7ef02309.json
 
