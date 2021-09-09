@@ -19,7 +19,7 @@ class GspeechClient:
         # Audio stream input setup
         FORMAT = pyaudio.paInt16
         CHANNELS = 1
-        RATE = 16000
+        RATE = 44100
         self.CHUNK = 4096
         self.audio = pyaudio.PyAudio()
         self.stream = self.audio.open(format=FORMAT, channels=CHANNELS,
@@ -143,7 +143,7 @@ class GspeechClient:
         metadata.original_media_type = (enums.RecognitionMetadata.OriginalMediaType.AUDIO)
         config = types.RecognitionConfig(
             encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
-            sample_rate_hertz=16000,
+            sample_rate_hertz=44100,
             language_code=language_code,
             speech_contexts=[context],
             use_enhanced=True,

@@ -1,3 +1,4 @@
+#!/bin/bash
 xhost local:root
 
 Desktop/pal_docker_utils-master/scripts : sudo docker container ls
@@ -15,20 +16,7 @@ sudo aplay -l
 apt-get install --yes sox alsa-utils lame
 l
 
-
-import rospy
-from dialogflow_ros import DialogflowClient
-from dialogflow_ros.msg import *
-
-if __name__ == '__main__':
-    rospy.init_node('test_intent_text', log_level=rospy.DEBUG)
-    dc = DialogflowClient()
-    dr = DialogflowRequest(query_text="Will you take my order")
-    resp1 = dc.detect_intent_text(dr)
-    # dr.query_text = "pick up the pencil"
-    # dr.contexts = resp1.contexts
-    # resp2 = dc.detect_intent_text(dr)
-    Laksani1965I
+python instructions2.py
     
    dialogflow_client/results
    

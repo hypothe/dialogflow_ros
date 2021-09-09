@@ -10,7 +10,7 @@ class AudioServer:
     def __init__(self):
         FORMAT = pyaudio.paInt16
         CHANNELS = 1
-        RATE = 16000
+        RATE = 44100
         CHUNK = 4096
         self.audio = pyaudio.PyAudio()
         self.stream = self.audio.open(format=FORMAT, channels=CHANNELS, rate=RATE,
