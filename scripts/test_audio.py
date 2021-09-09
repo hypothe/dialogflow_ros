@@ -26,7 +26,7 @@ RECORD_SECONDS = 15 # about 1sec
 FORMAT = pyaudio.paInt16
 FRAME_MAX_VALUE = 2 ** 15 - 1
 NORMALIZE_MINUS_ONE_dB = 10 ** (-1.0 / 20)
-RATE = 16000
+RATE = 44100
 CHANNELS = 1
 TRIM_APPEND = RATE / 4
 
@@ -50,7 +50,7 @@ def listen_to_mic(req):
 
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
-        sample_rate_hertz=16000,
+        sample_rate_hertz=44100,
         language_code='en-US')
 
 # Detects speech in the audio file
