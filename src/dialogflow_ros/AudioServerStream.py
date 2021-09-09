@@ -5,7 +5,7 @@ import socket
 import time
 
 # Audio recording parameters
-RATE = 16000
+RATE = 44100
 CHUNK = 1600
 
 
