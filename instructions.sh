@@ -7,7 +7,7 @@ python -m ensurepip --default-pip
 python3 -m ensurepip --default-pip
 #apt-get install python-pip=20.0.2 python3-pip -y
 
-pip install --upgrade setuptools
+#pip install --upgrade setuptools
 apt install portaudio19-dev python3-pyaudio -y
 
 pip install --upgrade google-cloud-speech
