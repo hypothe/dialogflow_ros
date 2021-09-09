@@ -17,8 +17,8 @@ gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
 apt-get install --yes sox alsa-utils lame
 
 pip3 install google-cloud-dialogflow-cx
-pip3 install dialogflow==1.1
-pip3 install dialogflow_v2beta1
+pip3 install dialogflow==1.1.0
+#pip3 install dialogflow_v2beta1
 
 echo "AAA"
 
@@ -26,7 +26,7 @@ python instructions2.py
 
    
 pip install google-cloud-dialogflow
-    
+apt install portaudio19-dev python3-pyaudio -y
 
 apt install python-pyaudio -y
 

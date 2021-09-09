@@ -13,4 +13,3 @@ if __name__ == '__main__':
     # dr.query_text = "pick up the pencil"
     # dr.contexts = resp1.contexts
     # resp2 = dc.detect_intent_text(dr)
-    Laksani1965I
