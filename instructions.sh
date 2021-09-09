@@ -13,7 +13,7 @@ apt install python-pyaudio -y
 apt-get update
 
 source ${HOME}/.bashrc
-
+python3 -m pip install dialogflow
 gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
 
 sudo rosdep init
