@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export GOOGLE_APPLICATION_CREDENTIALS=/home/user/ws/src/dialogflow_ros/json_folder/gentle-proton-252714-066b7ef02309.json
-
+apt-get install python-pip python3-pip
 pip3 install -r requirements.txt
 
 #sudo curl https://sdk.cloud.google.com | sudo bash https://sdk.cloud.google.com
@@ -19,8 +19,6 @@ apt-get install --yes sox alsa-utils lame
 pip3 install google-cloud-dialogflow-cx
 pip3 install dialogflow==1.1.0
 #pip3 install dialogflow_v2beta1
-
-echo "AAA"
 
 python instructions2.py
 
