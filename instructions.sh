@@ -4,16 +4,8 @@ echo "export GOOGLE_APPLICATION_CREDENTIALS=/home/user/ws/src/dialogflow_ros/jso
 source ${HOME}/.bashrc
 apt-get install python-pip python3-pip -y
 
-pip install --upgrade setuptools
-apt install portaudio19-dev python3-pyaudio -y
-
-pip install --upgrade google-cloud-speech
-
 pip install -r requirements.txt 
-
-pip install dialogflow
-python3 -m pip install dialogflow
-
+pip3 install -r requirements3.txt 
 
 apt install python-pyaudio -y
 
@@ -21,7 +13,7 @@ apt install python-pyaudio -y
 apt-get update
 
 source ${HOME}/.bashrc
-
+python3 -m pip install dialogflow
 gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
 
 sudo rosdep init
