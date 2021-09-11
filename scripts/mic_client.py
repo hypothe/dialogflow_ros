@@ -82,21 +82,19 @@ class GspeechClient(object):
 		print only the transcription for the top alternative of the top result.
 		"""
 	
-		# Parse the final utterance
-		if result.is_final:
-			rospy.loginfo("Google Speech result: {}".format(result))
-			# Received data is Unicode, convert it to string
-			transcript = transcript.encode('utf-8')
-			# Strip the initial space, if any
-			if transcript.startswith(' '):
-				transcript = transcript[1:]
-			
-					# Exit if needed
-			if transcript.lower() == 'exit':
-				self.shutdown()
-				# Send the rest of the sentence to topic
-			self.text_pub.publish(transcript)
+		rospy.loginfo("Google Speech result: {}".format(result))
+		# Received data is Unicode, convert it to string
+		transcript = transcript.encode('utf-8')
+		# Strip the initial space, if any
+		if transcript.startswith(' '):
+			transcript = transcript[1:]
 		
+				# Exit if needed
+		if transcript.lower() == 'exit':
+			self.shutdown()
+			# Send the rest of the sentence to topic
+		self.text_pub.publish(transcript)
+	
   		dr = DialogflowRequest(query_text=transcript)
 		resp_tmp = dc.detect_intent_text(dr)
 		resp = resp_tmp.fulfillment_text
@@ -132,7 +130,6 @@ class GspeechClient(object):
 				# If not a valid response, move on to next potential one
 				if not response.results:
 						continue
-				print("I heard: %s" % response)		
 				# The `results` list is consecutive. For streaming, we only care about
 				# the first result being considered, since once it's `is_final`, it
 				# moves on to considering the next utterance.
@@ -142,13 +139,12 @@ class GspeechClient(object):
 			
 			# #####################
 				# Display the transcription of the top alternative.
-				message_heard = result.alternatives[0].transcript
+				if result.is_final:
+					message_heard = result.alternatives[0].transcript
 
+			print("I heard: %s" % message_heard)		
 			print("Message taken")
 			repeat = self._listen_print_loop(message_heard, dc)
-			#dc = DialogflowClient()
-			#dr = DialogflowRequest(query_text=transcript)
-			#resp1 = dc.detect_intent_text(dr)
 
 	def shutdown(self):
 		"""Shut down as cleanly as possible"""
