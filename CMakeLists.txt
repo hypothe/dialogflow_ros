@@ -7,6 +7,9 @@ project(dialogflow_ros)
 find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
+  std_srvs
+  actionlib
+  actionlib_msgs
   message_generation
 )
 
@@ -19,7 +22,11 @@ add_service_files(
   FILES
   DialogflowService.srv
 )
+ add_action_files(
+   FILES
+   GetOrder.action
 
+ )
 add_message_files(
   FILES
   DialogflowResult.msg
@@ -29,9 +36,13 @@ add_message_files(
   DialogflowEvent.msg
 )
 
+
+
 generate_messages(
   DEPENDENCIES
   std_msgs
+  std_srvs
+  actionlib_msgs
 )
 
 ###################################
