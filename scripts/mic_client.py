@@ -116,7 +116,8 @@ class GspeechClient(object):
 			language_code=language_code)
 		streaming_config = types.StreamingRecognitionConfig(
 			config=config,
-			interim_results=True)
+			single_utterance=True,
+			interim_results=False)
 
 		dc = DialogflowClient()
 		repeat = True
@@ -126,7 +127,9 @@ class GspeechClient(object):
 			# #####################
 			requests = (types.StreamingRecognizeRequest(audio_content=content) for content in self._generator())
 			responses = client.streaming_recognize(streaming_config, requests)
+			print(responses)
 			for response in responses:
+				print(response)
 				# If not a valid response, move on to next potential one
 				if not response.results:
 						continue
@@ -139,8 +142,8 @@ class GspeechClient(object):
 			
 			# #####################
 				# Display the transcription of the top alternative.
-				if result.is_final:
-					message_heard = result.alternatives[0].transcript
+				message_heard = result.alternatives[0].transcript
+				print(message_heard)
 
 			print("I heard: %s" % message_heard)		
 			print("Message taken")
