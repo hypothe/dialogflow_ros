@@ -77,6 +77,7 @@ include_directories(
 ## in contrast to setup.py, you can choose the destination
 install(PROGRAMS
   scripts/mic_client.py
+  scripts/test_message.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

@@ -59,7 +59,9 @@ def listen_to_mic(req):
     for result in response.results:
         print('Transcript: {}'.format(result.alternatives[0].transcript))
 
-    req.message = result.alternatives[0].transcript
+    res = Trigger()
+    res.message = result.alternatives[0].transcript
+    return res
 
 
 
@@ -152,12 +154,7 @@ def record_to_file(path):
     wave_file.writeframes(data)
     wave_file.close()
 
-def add_two_ints_server():
-    
-
 if __name__ == '__main__':
-    rospy.init_node('add_two_ints_server')
+    rospy.init_node('test_audio_server')
     s = rospy.Service('listen', Trigger, listen_to_mic)
     rospy.spin()
-    
-

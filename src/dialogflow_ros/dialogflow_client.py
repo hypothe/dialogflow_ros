@@ -40,9 +40,6 @@ class DialogflowClient(object):
         self.PLAY_AUDIO = rospy.get_param('/dialogflow_client/play_audio', True)
         self.DEBUG = rospy.get_param('/dialogflow_client/debug', False)
 
-        # Register Ctrl-C sigint
-        signal.signal(signal.SIGINT, self._signal_handler)
-
         """ Dialogflow setup """
         # Get hints/clues
         rp = rospkg.RosPack()
