@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "export CLOUDSDK_CORE_DISABLE_PROMPTS=1" >> ${HOME}/.bashrc
-echo "export GOOGLE_APPLICATION_CREDENTIALS=/home/user/ws/src/dialogflow_ros/json_folder/gentle-proton-252714-066b7ef02309.json" >> ${HOME}/.bashrc
+echo "export GOOGLE_APPLICATION_CREDENTIALS='/home/user/ws/src/dialogflow_ros/json_folder/gentle-proton-252714-066b7ef02309.json'" >> ${HOME}/.bashrc
 source ${HOME}/.bashrc
 
 apt-get install portaudio19-dev -y
