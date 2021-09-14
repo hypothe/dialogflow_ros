@@ -10,18 +10,16 @@ curl https://sdk.cloud.google.com | bash
 source "${HOME}/google-cloud-sdk/path.bash.inc"
 source "${HOME}/google-cloud-sdk/completion.bash.inc"
 
-
 pip install -r requirements.txt 
 pip3 install -r requirements3.txt 
 
 apt install python-pyaudio -y
 
-
 apt-get update
 
 source ${HOME}/.bashrc
 python3 -m pip install dialogflow
-gcloud auth activate-service-account --key-file $GOOGLE_APPLICATION_CREDENTIALS
+gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
 
 sudo rosdep init
 rosdep update
