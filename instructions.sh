@@ -9,12 +9,13 @@ curl https://sdk.cloud.google.com | bash
 source "${HOME}/google-cloud-sdk/path.bash.inc"
 source "${HOME}/google-cloud-sdk/completion.bash.inc"
 
-apt-get install python-setuptools  python3-pip -y
-easy_install pip
+apt-get update
+apt-get upgrade
+apt-get install python-pip  python3-pip -y
 python -m pip install -r requirements.txt 
 python3 -m pip install -r requirements3.txt 
 
-apt install python-pyaudio -y
+apt-get install python-pyaudio -y
 
 apt-get update
 
