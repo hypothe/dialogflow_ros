@@ -10,8 +10,8 @@ curl https://sdk.cloud.google.com | bash
 source "${HOME}/google-cloud-sdk/path.bash.inc"
 source "${HOME}/google-cloud-sdk/completion.bash.inc"
 
-pip install -r requirements.txt 
-pip3 install -r requirements3.txt 
+python -m pip install -r requirements.txt 
+python3 -m pip install -r requirements3.txt 
 
 apt install python-pyaudio -y
 
