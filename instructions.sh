@@ -4,7 +4,7 @@ echo "export GOOGLE_APPLICATION_CREDENTIALS=/home/user/ws/src/dialogflow_ros/jso
 source ${HOME}/.bashrc
 apt-get install python-pip python3-pip -y
 
-apt-get install portaudio19-dev
+apt-get install portaudio19-dev -y
 
 curl https://sdk.cloud.google.com | bash
 source "${HOME}/google-cloud-sdk/path.bash.inc"
