@@ -31,6 +31,8 @@ gennodejs==2.0.1
 genpy==0.6.14
 google-api-core==1.31.2
 google-auth==1.35.0
+google-cloud-dialogflow
+google-cloud-speech
 googleapis-common-protos==1.53.0
 grpcio==1.40.0
 idna==2.6
