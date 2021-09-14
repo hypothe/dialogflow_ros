@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+	<!--	If "fake_mic" is specified launch the service which takes input from cmd instead of the mic 	-->
+	<arg name="fake_mic"   default="true"/>
+	<group if="$(arg fake_mic)">
+  	<node pkg="dialogflow_ros"	type="test_message.py" name="test_message" output="screen" required="true" args="--wait"/>
+	</group>
+	<group unless="$(arg fake_mic)">
+  	<node pkg="dialogflow_ros"	type="test_audio.py" name="test_audio" output="screen" required="true" args="--wait"/>
+	</group>
+
+	<!--  Dialogflow order interaction  -->
+  <include file="$(find dialogflow_ros)/launch/dialogflow.launch"/>
+  <node pkg="dialogflow_ros"	type="mic_client.py" name="mic_client" output="screen" required="true" args="--wait"/>
+	
+</launch>
