@@ -9,7 +9,7 @@ source "${HOME}/google-cloud-sdk/path.bash.inc"
 source "${HOME}/google-cloud-sdk/completion.bash.inc"
 
 apt-get update
-apt-get upgrade
+apt-get upgrade -y
 apt-get install python-pip  python3-pip -y
 python -m pip install -r requirements.txt 
 python3 -m pip install -r requirements3.txt 
