@@ -20,7 +20,6 @@ apt-get install python-pyaudio -y
 
 apt-get update
 
-python3 -m pip install dialogflow
 echo $GOOGLE_APPLICATION_CREDENTIALS
 gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
 
