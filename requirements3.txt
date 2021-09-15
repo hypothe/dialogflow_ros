@@ -1,5 +1,5 @@
 google-api-core==1.31.2
-google-api-python-client=2.21.0
+google-api-python-client==2.21.0
 google-auth==1.35.0
 google-cloud-dialogflow
 google-cloud-speech
