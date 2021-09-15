@@ -11,7 +11,9 @@ source "${HOME}/google-cloud-sdk/completion.bash.inc"
 apt-get update
 apt-get upgrade -y
 apt-get install python-pip  python3-pip -y
+echo "python -m pip install -r requirements.txt"
 python -m pip install -r requirements.txt 
+echo "python3 -m pip install -r requirements3.txt"
 python3 -m pip install -r requirements3.txt 
 
 apt-get install python-pyaudio -y
